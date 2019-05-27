@@ -1,0 +1,17 @@
+.result {
+  display: flex;
+  align-items: center;
+}
+
+:host {
+  .delete-button {
+    display: none;
+  }
+
+  &:hover {
+    .delete-button {
+      display: flex;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<button mat-icon-button (click)="decrease()" [disabled]="isDisabled">
+  <mat-icon>remove</mat-icon>
+</button>
+<mat-form-field class="point-input">
+  <input matInput [(ngModel)]="value"/>
+</mat-form-field>
+<button mat-icon-button (click)="increase()">
+  <mat-icon>add</mat-icon>
+</button>
+
