@@ -112,15 +112,13 @@ THE SOFTWARE.
 
 @angular/material/button
 
-@angular/material/core
+@angular/material/dialog
 
 @angular/material/divider
 
 @angular/material/form-field
 
 @angular/material/icon
-
-@angular/material/list
 
 @angular/material/toolbar
 
