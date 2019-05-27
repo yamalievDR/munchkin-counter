@@ -1,6 +1,23 @@
 .topbar-spacer {
   flex: 1 1 auto;
 }
+
 .topbar-icon {
   margin: 0 5px;
+}
+
+.players-container {
+  width: 80%;
+  margin: auto;
+}
+
+@media (max-width: 900px) {
+  .players-container {
+    width: 1000%;
+  }
+}
+
+.empty-game {
+  height: calc(100vh - 64px);
+  width: 100%;
 }

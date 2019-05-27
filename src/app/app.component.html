@@ -10,8 +10,12 @@
     </button>
   </mat-toolbar-row>
 </mat-toolbar>
-<mat-list>
-  <ng-container *ngFor="let player of players">
-    <app-player [player]="player" (removed)="removePlayer($event)"></app-player>
-  </ng-container>
-</mat-list>
+<ng-container *ngIf="players?.length; else emptyGame">
+  <div class="players-container">
+    <app-player *ngFor="let player of players" [player]="player" (removed)="removePlayer($event)"></app-player>
+  </div>
+</ng-container>
+
+<ng-template #emptyGame>
+  <div fxLayout="row" fxLayoutAlign="center center" class="empty-game">Необходимо добавить игроков для начала игры</div>
+</ng-template>
