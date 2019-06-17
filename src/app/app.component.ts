@@ -33,6 +33,11 @@ export class AppComponent {
     this.players = this.players.filter(p => p.name !== player.name);
   }
 
+  resetPlayer(player: Player) {
+    player.level = 1;
+    player.bonuses = 0;
+  }
+
   clearGame() {
     this.players = [];
   }

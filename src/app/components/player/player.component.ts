@@ -7,19 +7,17 @@ import { Player } from '../../models/player';
   styleUrls: ['./player.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PlayerComponent implements OnInit {
+export class PlayerComponent {
 
   @Input() player: Player;
   @Output() removed = new EventEmitter();
-
-  constructor() {
-  }
+  @Output() reseted = new EventEmitter();
 
   removePlayer() {
     this.removed.emit(this.player);
   }
-
-  ngOnInit() {
+  resetPlayer() {
+    this.reseted.emit(this.player);
   }
 
 }

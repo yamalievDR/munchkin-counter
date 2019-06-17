@@ -6,16 +6,20 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output
   styleUrls: ['./counter.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CounterComponent implements OnInit {
+export class CounterComponent {
 
-  @Input() value: number;
+  _value: number = 0;
+  @Input() 
+  get value() {
+    return this._value;
+  }
+
   @Input() minValue: number;
   @Output() valueChange = new EventEmitter<number>();
 
-  constructor() {
-  }
-
-  ngOnInit() {
+  set value(s) {
+    this._value = s;
+    this.valueChange.emit(this._value);
   }
 
   get isDisabled(): boolean {
@@ -23,12 +27,12 @@ export class CounterComponent implements OnInit {
   }
 
   increase() {
-    this.value += 1;
-    this.valueChange.emit(this.value);
+    this.value++;
+    // this.valueChange.emit(this.value);
   }
 
   decrease() {
-    this.value -= 1;
-    this.valueChange.emit(this.value);
+    this.value--;
+    // this.valueChange.emit(this.value);
   }
 }

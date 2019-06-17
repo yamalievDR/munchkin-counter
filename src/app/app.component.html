@@ -12,7 +12,9 @@
 </mat-toolbar>
 <ng-container *ngIf="players?.length; else emptyGame">
   <div class="players-container">
-    <app-player *ngFor="let player of players" [player]="player" (removed)="removePlayer($event)"></app-player>
+    <app-player *ngFor="let player of players" [player]="player" 
+                (removed)="removePlayer($event)"
+                (reseted)="resetPlayer($event)"></app-player>
   </div>
 </ng-container>
 

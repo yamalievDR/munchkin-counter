@@ -1,11 +1,13 @@
 <div fxLayout="row" fxLayoutAlign="center center">
-  <mat-icon fxFlex="5" mat-list-icon>face</mat-icon>
   <h4 fxFlex>{{player.name}}</h4>
-  <app-counter fxFlex="20" [(value)]="player.level" [minValue]="1"></app-counter>
-  <app-counter fxFlex="20" [(value)]="player.bonuses" [minValue]="0"></app-counter>
+  <app-counter fxFlex="25" [(value)]="player.level" [minValue]="1"></app-counter>
+  <app-counter fxFlex="25" [(value)]="player.bonuses" [minValue]="0"></app-counter>
   <div fxFlex="5" class="result">{{ player.level + player.bonuses }}</div>
   <div fxFlex="5">
     <mat-icon class="delete-button" mat-list-icon (click)="removePlayer()">clear</mat-icon>
+  </div>
+  <div fxFlex="5">
+    <mat-icon class="delete-button" mat-list-icon (click)="resetPlayer()">replay</mat-icon>
   </div>
 </div>
 <mat-divider></mat-divider>
